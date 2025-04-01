@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Bitwise Operations Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>JavaScript Bitwise Operations</h1>
+      <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌓</button>
+    </header>
+
+    <main>
+      <section class="input-section">
+        <label for="numberInput">Enter an Integer:</label>
+        <input type="number" id="numberInput" value="5" step="1" />
+        <div class="binary-display">
+          <span>32-bit Binary:</span>
+          <code id="binaryInputDisplay">00000000000000000000000000000101</code>
+        </div>
+      </section>
+
+      <section class="controls-section">
+        <h2>Select Operation:</h2>
+        <div class="controls">
+          <!-- Shift Operations -->
+          <button data-op="<<" data-operand-type="shift">
+            Left Shift (<<)
+          </button>
+          <button data-op=">>" data-operand-type="shift">
+            Sign-Propagating Right Shift (>>)
+          </button>
+          <button data-op=">>>" data-operand-type="shift">
+            Zero-Fill Right Shift (>>>)
+          </button>
+          <!-- Logical Operations -->
+          <button data-op="&" data-operand-type="logical">AND (&)</button>
+          <button data-op="|" data-operand-type="logical">OR (|)</button>
+          <button data-op="^" data-operand-type="logical">XOR (^)</button>
+          <!-- Unary Operation -->
+          <button data-op="~" data-operand-type="unary">NOT (~)</button>
+        </div>
+        <div
+          class="operand-input"
+          id="operandInputContainer"
+          style="display: none"
+        >
+          <label for="operandInput" id="operandLabel">Shift by / With:</label>
+          <input type="number" id="operandInput" value="1" min="0" step="1" />
+        </div>
+      </section>
+
+      <section class="result-section">
+        <h2>Result:</h2>
+        <p id="resultOperationDisplay">Operation: N/A</p>
+        <p>Decimal: <strong id="resultDecimalDisplay">N/A</strong></p>
+        <p>Original:</p>
+        <div class="binary-display" id="resultOriginalBinaryDisplay"></div>
+        <p>Result:</p>
+        <div class="binary-display" id="resultBinaryDisplay"></div>
+      </section>
+
+      <section class="explanation-section">
+        <h2 id="explanationTitle">Operation Details</h2>
+        <p>
+          <strong>Description:</strong>
+          <span id="explanationText">Select an operation above.</span>
+        </p>
+        <p>
+          <strong>Use Cases:</strong> <span id="explanationUsecases"></span>
+        </p>
+        <p><strong>Code Sample:</strong></p>
+        <pre><code id="explanationCode"></code></pre>
+      </section>
+    </main>
+
+    <footer>
+      <p>Vanilla JS Bitwise Demo</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

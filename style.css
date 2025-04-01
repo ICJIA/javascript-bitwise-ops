@@ -1,0 +1,355 @@
+/* Basic Reset & Root Variables */
+:root {
+    --bg-color: #f4f7f9;
+    --text-color: #333;
+    --header-bg: #ffffff;
+    --section-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --primary-color: #007bff;
+    --primary-text: #ffffff;
+    --code-bg: #e9ecef;
+    --code-text: #333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --button-bg: #f0f0f0;
+    --button-text: #333;
+    --button-hover-bg: #e0e0e0;
+    --button-active-bg: #007bff;
+    --button-active-text: #ffffff;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --header-bg: #2c2c2c;
+    --section-bg: #252525;
+    --border-color: #444;
+    --primary-color: #0d6efd;
+    --primary-text: #ffffff;
+    --code-bg: #3a3a3a;
+    --code-text: #e0e0e0;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --button-bg: #444;
+    --button-text: #e0e0e0;
+    --button-hover-bg: #555;
+    --button-active-bg: #0d6efd;
+    --button-active-text: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-top: 80px;
+    /* Space for fixed header */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+#themeToggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.3rem 0.5rem;
+    line-height: 1;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+#themeToggle:hover {
+    transform: scale(1.1);
+}
+
+main {
+    max-width: 1500px; /* Increased max-width */
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+section {
+    background-color: var(--section-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+label {
+    display: inline-block;
+    /* Changed from block */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    /* Added margin */
+}
+
+input[type="number"] {
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin-right: 1rem;
+    /* Added margin */
+    width: 100px;
+    /* Fixed width */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.binary-display {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.binary-display span {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.binary-display code,
+pre code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+    word-break: break-all;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    letter-spacing: 0.1em; /* Adjust spacing for readability */
+}
+
+/* Graphical Binary Display */
+.binary-graphical {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: monospace;
+    font-size: 1.2rem; /* Increased font size */
+    line-height: 1.4; /* Increased line height */
+    margin-top: 0.5em;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.binary-graphical .bit {
+    width: 1.5em; /* Increased width */
+    height: 1.5em; /* Increased height */
+    text-align: center;
+    border-radius: 5px; /* Increased border-radius */
+    margin: 0px; /* Changed margin to 0 */
+    color: var(--text-color);
+}
+
+.binary-graphical .bit.one {
+    background-color: var(--primary-color);
+    color: var(--primary-text);
+}
+
+.binary-graphical .separator {
+    width: 0.7em; /* Increased width */
+    /* Creates a visual space */
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.controls button {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.controls button:hover {
+    background-color: var(--button-hover-bg);
+    border-color: #aaa;
+    /* Slightly darker border on hover */
+}
+
+.dark-mode .controls button:hover {
+    border-color: #777;
+}
+
+.controls button.active {
+    background-color: var(--button-active-bg);
+    color: var(--button-active-text);
+    border-color: var(--button-active-bg);
+    font-weight: bold;
+}
+
+.operand-input {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.result-section strong {
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.explanation-section pre {
+    background-color: var(--code-bg);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.explanation-section pre code {
+    background-color: transparent;
+    /* Code inside pre doesn't need its own background */
+    padding: 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.dark-mode footer {
+    color: #aaa;
+}
+
+/* Improve spacing for smaller labels */
+.operand-input label {
+    margin-bottom: 0;
+}
+
+/* Ensure input section elements align nicely */
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.input-section label,
+.input-section input {
+    margin-bottom: 0.5rem;
+    /* Reset margin for alignment */
+}
+
+.input-section .binary-display {
+    width: 100%;
+    /* Make binary display take full width below */
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 1600px) {
+    main {
+        max-width: 95%; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    #themeToggle {
+        font-size: 1.3rem;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .controls {
+        gap: 0.5rem;
+    }
+
+    .controls button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .input-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-section input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .input-section .binary-display {
+        margin-top: 1rem;
+    }
+
+    .operand-input {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .operand-input input {
+        width: 100%;
+    }
+
+    .binary-graphical {
+        font-size: 0.7rem; /* Further reduce font size for very small screens */
+    }
+
+    .binary-graphical .bit {
+        width: 0.9em;
+        height: 0.9em;
+        margin: 1px;
+        border-radius: 2px;
+    }
+
+    .binary-graphical .separator {
+        width: 0.3em;
+    }
+}
