@@ -4,6 +4,10 @@ Interactive demonstration of JavaScript bitwise operations. It allows users to i
 
 Bitwise operations are fundamental in programming, especially in low-level programming, performance optimization, and algorithmic challenges.
 
+## Demo
+
+https://js-bitwise.netlify.app/
+
 ## Features
 
 - Interactive demonstration of bitwise operations
